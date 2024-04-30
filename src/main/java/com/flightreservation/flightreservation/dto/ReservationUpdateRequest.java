@@ -1,31 +1,35 @@
 package com.flightreservation.flightreservation.dto;
 
 public class ReservationUpdateRequest {
-    private Long id;
-    private boolean checkedIn;
-    private int numberOfBags;
 
-    public Long getId() {
-        return id;
-    }
+	private Long id;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	private boolean checkedIn;
 
-    public boolean isCheckedIn() {
-        return checkedIn;
-    }
+	private int numberOfBags;
 
-    public void setCheckedIn(boolean checkedIn) {
-        this.checkedIn = checkedIn;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public int getNumberOfBags() {
-        return numberOfBags;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public void setNumberOfBags(int numberOfBags) {
-        this.numberOfBags = numberOfBags;
-    }
+	public boolean isCheckedIn() {
+		return checkedIn;
+	}
+
+	public void setCheckedIn(boolean checkedIn) {
+		this.checkedIn = checkedIn;
+	}
+
+	public int getNumberOfBags() {
+		return numberOfBags;
+	}
+
+	public void setNumberOfBags(int numberOfBags) {
+		this.numberOfBags = numberOfBags;
+	}
+
 }
