@@ -18,32 +18,32 @@ import java.util.List;
 @Controller
 public class FlightController {
 
-    private static final Logger LOGGER= LoggerFactory.getLogger(FlightController.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(FlightController.class);
 
-    @Autowired
-    FlightRepository flightRepository;
+	@Autowired
+	FlightRepository flightRepository;
 
-    @RequestMapping("/findFlights")
-    public String findFLights(@RequestParam("source") String source, @RequestParam("destination") String destination,
-                              @RequestParam("departDate") @DateTimeFormat(pattern = "MM-dd-yyyy") Date departDate, ModelMap modelMap) {
+	@RequestMapping("/findFlights")
+	public String findFLights(@RequestParam("source") String source, @RequestParam("destination") String destination,
+			@RequestParam("departDate") @DateTimeFormat(pattern = "MM-dd-yyyy") Date departDate, ModelMap modelMap) {
 
-        LOGGER.info("Inside findFlights() From:" + source + " TO:" + destination + "Departure Date: " + departDate);
-        List<Flight> flights =flightRepository.findFlights(source,destination,departDate);
-        modelMap.addAttribute("flights",flights);
-        LOGGER.info("Flights found are"+flights.toString());
-        return "flights/displayFlights";
-    }
+		LOGGER.info("Inside findFlights() From:" + source + " TO:" + destination + "Departure Date: " + departDate);
+		List<Flight> flights = flightRepository.findFlights(source, destination, departDate);
+		modelMap.addAttribute("flights", flights);
+		LOGGER.info("Flights found are" + flights.toString());
+		return "flights/displayFlights";
+	}
 
-    @RequestMapping("/admin/showAddFlight")
-    public String showAddFlightPage(){
-        return "flights/addFlight";
-    }
+	@RequestMapping("/admin/showAddFlight")
+	public String showAddFlightPage() {
+		return "flights/addFlight";
+	}
 
-    @RequestMapping("/admin/addFlight")
-    public String addFlight(@ModelAttribute("flight") Flight flight,ModelMap modelmap){
-       flightRepository.save(flight);
-       modelmap.addAttribute("msg","Flight Added Successfully");
-       return "flights/addFlight";
-    }
+	@RequestMapping("/admin/addFlight")
+	public String addFlight(@ModelAttribute("flight") Flight flight, ModelMap modelmap) {
+		flightRepository.save(flight);
+		modelmap.addAttribute("msg", "Flight Added Successfully");
+		return "flights/addFlight";
+	}
 
 }
