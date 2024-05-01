@@ -1,110 +1,114 @@
 package com.flightreservation.flightreservation.dto;
 
 public class ReservationRequest {
-    private Long flightId;
-    private String passengerFirstName;
-    private String passengerMiddleName;
-    private String passengerLastName;
-    private String passengerEmail;
-    private String passengerPhone;
-    private String nameOnTheCard;
-    private String cardNumber;
 
-    private String expirationDate;
-    private String securityCode;
+	private Long flightId;
 
-    public Long getFlightId() {
-        return flightId;
-    }
+	private String passengerFirstName;
 
-    public void setFlightId(Long flightId) {
-        this.flightId = flightId;
-    }
+	private String passengerMiddleName;
 
-    public String getPassengerFirstName() {
-        return passengerFirstName;
-    }
+	private String passengerLastName;
 
-    public void setPassengerFirstName(String passengerFirstName) {
-        this.passengerFirstName = passengerFirstName;
-    }
+	private String passengerEmail;
 
-    public String getPassengerMiddleName() {
-        return passengerMiddleName;
-    }
+	private String passengerPhone;
 
-    public void setPassengerMiddleName(String passengerMiddleName) {
-        this.passengerMiddleName = passengerMiddleName;
-    }
+	private String nameOnTheCard;
 
-    public String getPassengerLastName() {
-        return passengerLastName;
-    }
+	private String cardNumber;
 
-    public void setPassengerLastName(String passengerLastName) {
-        this.passengerLastName = passengerLastName;
-    }
+	private String expirationDate;
 
-    public String getPassengerEmail() {
-        return passengerEmail;
-    }
+	private String securityCode;
 
-    public void setPassengerEmail(String passengerEmail) {
-        this.passengerEmail = passengerEmail;
-    }
+	public Long getFlightId() {
+		return flightId;
+	}
 
-    public String getPassengerPhone() {
-        return passengerPhone;
-    }
+	public void setFlightId(Long flightId) {
+		this.flightId = flightId;
+	}
 
-    public void setPassengerPhone(String passengerPhone) {
-        this.passengerPhone = passengerPhone;
-    }
+	public String getPassengerFirstName() {
+		return passengerFirstName;
+	}
 
-    public String getNameOnTheCard() {
-        return nameOnTheCard;
-    }
+	public void setPassengerFirstName(String passengerFirstName) {
+		this.passengerFirstName = passengerFirstName;
+	}
 
-    public void setNameOnTheCard(String nameOnTheCard) {
-        this.nameOnTheCard = nameOnTheCard;
-    }
+	public String getPassengerMiddleName() {
+		return passengerMiddleName;
+	}
 
-    public String getCardNumber() {
-        return cardNumber;
-    }
+	public void setPassengerMiddleName(String passengerMiddleName) {
+		this.passengerMiddleName = passengerMiddleName;
+	}
 
-    public void setCardNumber(String cardNumber) {
-        this.cardNumber = cardNumber;
-    }
+	public String getPassengerLastName() {
+		return passengerLastName;
+	}
 
-    public String getExpirationDate() {
-        return expirationDate;
-    }
+	public void setPassengerLastName(String passengerLastName) {
+		this.passengerLastName = passengerLastName;
+	}
 
-    public void setExpirationDate(String expirationDate) {
-        this.expirationDate = expirationDate;
-    }
+	public String getPassengerEmail() {
+		return passengerEmail;
+	}
 
-    public String getSecurityCode() {
-        return securityCode;
-    }
+	public void setPassengerEmail(String passengerEmail) {
+		this.passengerEmail = passengerEmail;
+	}
 
-    public void setSecurityCode(String securityCode) {
-        this.securityCode = securityCode;
-    }
+	public String getPassengerPhone() {
+		return passengerPhone;
+	}
 
-    @Override
-    public String toString() {
-        return "ReservationRequest{" +
-                "flightId=" + flightId +
-                ", passengerFirstName='" + passengerFirstName + '\'' +
-                ", passengerMiddleName='" + passengerMiddleName + '\'' +
-                ", passengerEmail='" + passengerEmail + '\'' +
-                ", passengerPhone='" + passengerPhone + '\'' +
-                ", nameOnTheCard='" + nameOnTheCard + '\'' +
-                ", cardNumber='" + cardNumber + '\'' +
-                ", expirationDate='" + expirationDate + '\'' +
-                ", securityCode='" + securityCode + '\'' +
-                '}';
-    }
+	public void setPassengerPhone(String passengerPhone) {
+		this.passengerPhone = passengerPhone;
+	}
+
+	public String getNameOnTheCard() {
+		return nameOnTheCard;
+	}
+
+	public void setNameOnTheCard(String nameOnTheCard) {
+		this.nameOnTheCard = nameOnTheCard;
+	}
+
+	public String getCardNumber() {
+		return cardNumber;
+	}
+
+	public void setCardNumber(String cardNumber) {
+		this.cardNumber = cardNumber;
+	}
+
+	public String getExpirationDate() {
+		return expirationDate;
+	}
+
+	public void setExpirationDate(String expirationDate) {
+		this.expirationDate = expirationDate;
+	}
+
+	public String getSecurityCode() {
+		return securityCode;
+	}
+
+	public void setSecurityCode(String securityCode) {
+		this.securityCode = securityCode;
+	}
+
+	@Override
+	public String toString() {
+		return "ReservationRequest{" + "flightId=" + flightId + ", passengerFirstName='" + passengerFirstName + '\''
+				+ ", passengerMiddleName='" + passengerMiddleName + '\'' + ", passengerEmail='" + passengerEmail + '\''
+				+ ", passengerPhone='" + passengerPhone + '\'' + ", nameOnTheCard='" + nameOnTheCard + '\''
+				+ ", cardNumber='" + cardNumber + '\'' + ", expirationDate='" + expirationDate + '\''
+				+ ", securityCode='" + securityCode + '\'' + '}';
+	}
+
 }
