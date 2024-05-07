@@ -19,34 +19,36 @@ import java.util.Optional;
 
 @Controller
 public class ReservationController {
-    @Autowired
-    private FlightRepository flightRepository;
 
-    @Autowired
-    private ReservationService reservationService;
+	@Autowired
+	private FlightRepository flightRepository;
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ReservationController.class);
+	@Autowired
+	private ReservationService reservationService;
 
-    @RequestMapping("/showCompleteReservation")
-    public String showCompleteReservation(@RequestParam("flightId") Long flightId, ModelMap modelMap){
-        LOGGER.info("showCompleteReservation() invoked with the Flight Id: " + flightId);
-        Optional<Flight> flight=flightRepository.findById(flightId);
-        // handle error here
-        if(!flight.isPresent()){
-            LOGGER.error("Flight Not found: {}",flight.toString());
-            throw new FlightNotFound("flightId "+flightId);
-        }
-        LOGGER.info("Flight found: {}",flight.toString());
-        modelMap.addAttribute("flight",flight.get());
-        return "reservation/completeReservation";
-    }
+	private static final Logger LOGGER = LoggerFactory.getLogger(ReservationController.class);
 
-    @RequestMapping(value = "/completeReservation",method = RequestMethod.POST)
-    public String completeReservation(ReservationRequest reservationRequest, ModelMap modelMap){
-        LOGGER.info("completeReservation() invoked with the Reservation: " + reservationRequest.toString());
-        Reservation reservation=reservationService.bookFlight(reservationRequest);
-        modelMap.addAttribute("msg","Reservation created successfully and the reservation id is "+reservation.getId());
-        return "reservation/reservationConfirmation";
-    }
+	@RequestMapping("/showCompleteReservation")
+	public String showCompleteReservation(@RequestParam("flightId") Long flightId, ModelMap modelMap) {
+		LOGGER.info("showCompleteReservation() invoked with the Flight Id: " + flightId);
+		Optional<Flight> flight = flightRepository.findById(flightId);
+		// handle error here
+		if (!flight.isPresent()) {
+			LOGGER.error("Flight Not found: {}", flight.toString());
+			throw new FlightNotFound("flightId " + flightId);
+		}
+		LOGGER.info("Flight found: {}", flight.toString());
+		modelMap.addAttribute("flight", flight.get());
+		return "reservation/completeReservation";
+	}
+
+	@RequestMapping(value = "/completeReservation", method = RequestMethod.POST)
+	public String completeReservation(ReservationRequest reservationRequest, ModelMap modelMap) {
+		LOGGER.info("completeReservation() invoked with the Reservation: " + reservationRequest.toString());
+		Reservation reservation = reservationService.bookFlight(reservationRequest);
+		modelMap.addAttribute("msg",
+				"Reservation created successfully and the reservation id is " + reservation.getId());
+		return "reservation/reservationConfirmation";
+	}
 
 }

@@ -8,37 +8,38 @@ import java.util.Set;
 
 @Entity
 public class Role extends AbstractEntity implements GrantedAuthority {
-    private String name;
 
-    @ManyToMany(mappedBy = "roles")
-    private Set<User> users;
-    // this mapped by tells that the mapping is defined in the roles entity
+	private String name;
 
-    public Set<User> getUsers() {
-        return users;
-    }
+	@ManyToMany(mappedBy = "roles")
+	private Set<User> users;
 
-    public void setUsers(Set<User> users) {
-        this.users = users;
-    }
+	// this mapped by tells that the mapping is defined in the roles entity
 
-    public String getName() {
-        return name;
-    }
+	public Set<User> getUsers() {
+		return users;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public void setUsers(Set<User> users) {
+		this.users = users;
+	}
 
-    @Override
-    public String toString() {
-        return "Role{" +
-                "name='" + name + '\'' +
-                '}';
-    }
+	public String getName() {
+		return name;
+	}
 
-    @Override
-    public String getAuthority() {
-        return name;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "Role{" + "name='" + name + '\'' + '}';
+	}
+
+	@Override
+	public String getAuthority() {
+		return name;
+	}
+
 }
