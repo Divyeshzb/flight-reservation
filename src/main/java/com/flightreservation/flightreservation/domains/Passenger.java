@@ -5,60 +5,60 @@ import javax.persistence.Entity;
 @Entity
 public class Passenger extends AbstractEntity {
 
-    private String firstName;
-    private String middleName;
-    private String lastName;
-    private String email;
-    private String phone;
+	private String firstName;
 
-    public String getFirstName() {
-        return firstName;
-    }
+	private String middleName;
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+	private String lastName;
 
-    public String getMiddleName() {
-        return middleName;
-    }
+	private String email;
 
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
-    }
+	private String phone;
 
-    public String getLastName() {
-        return lastName;
-    }
+	public String getFirstName() {
+		return firstName;
+	}
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public String getMiddleName() {
+		return middleName;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public void setMiddleName(String middleName) {
+		this.middleName = middleName;
+	}
 
-    public String getPhone() {
-        return phone;
-    }
+	public String getLastName() {
+		return lastName;
+	}
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
-    @Override
-    public String toString() {
-        return "Passenger{" +
-                "firstName='" + firstName + '\'' +
-                ", middleName='" + middleName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
-                '}';
-    }
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	@Override
+	public String toString() {
+		return "Passenger{" + "firstName='" + firstName + '\'' + ", middleName='" + middleName + '\'' + ", lastName='"
+				+ lastName + '\'' + ", email='" + email + '\'' + ", phone='" + phone + '\'' + '}';
+	}
+
 }

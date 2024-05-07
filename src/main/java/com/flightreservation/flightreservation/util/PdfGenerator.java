@@ -16,70 +16,74 @@ import java.io.FileOutputStream;
 
 @Component
 public class PdfGenerator {
-    private static final Logger LOGGER = LoggerFactory.getLogger(PdfGenerator.class);
 
-    public void generateItenary(Reservation reservation, String filePath){
-        LOGGER.info("generateItinerary()");
-        Document document=new Document();
-        try {
-            PdfWriter.getInstance(document, new FileOutputStream(filePath));
-            document.open();
-            document.addTitle("Here is your Flight ticket");
-            document.add(generateTable(reservation));
-            document.close();
+	private static final Logger LOGGER = LoggerFactory.getLogger(PdfGenerator.class);
 
-        } catch (FileNotFoundException | DocumentException ex){
-            LOGGER.error("Error in finding file");
-            LOGGER.error("Exception in generateItinerary " +ex);
-            ex.printStackTrace();
-        }
-    }
-    public PdfPTable generateTable(Reservation reservation){
-        PdfPTable table=new PdfPTable(2);
+	public void generateItenary(Reservation reservation, String filePath) {
+		LOGGER.info("generateItinerary()");
+		Document document = new Document();
+		try {
+			PdfWriter.getInstance(document, new FileOutputStream(filePath));
+			document.open();
+			document.addTitle("Here is your Flight ticket");
+			document.add(generateTable(reservation));
+			document.close();
 
-        PdfPCell cell = new PdfPCell(new Phrase("Flight Itinerary"));
+		}
+		catch (FileNotFoundException | DocumentException ex) {
+			LOGGER.error("Error in finding file");
+			LOGGER.error("Exception in generateItinerary " + ex);
+			ex.printStackTrace();
+		}
+	}
 
-        cell.setColspan(2);
-        table.addCell(cell);
+	public PdfPTable generateTable(Reservation reservation) {
+		PdfPTable table = new PdfPTable(2);
 
-        cell = new PdfPCell(new Phrase("Flight Details"));
-        cell.setColspan(2);
-        table.addCell(cell);
+		PdfPCell cell = new PdfPCell(new Phrase("Flight Itinerary"));
 
-        table.addCell("Airlines ");
-        table.addCell(reservation.getFlight().getOperatingAirlines());
+		cell.setColspan(2);
+		table.addCell(cell);
 
-        table.addCell("Departure City");
-        table.addCell(reservation.getFlight().getDepartureCity());
+		cell = new PdfPCell(new Phrase("Flight Details"));
+		cell.setColspan(2);
+		table.addCell(cell);
 
-        table.addCell("Arrival City");
-        table.addCell(reservation.getFlight().getArrivalCity());
+		table.addCell("Airlines ");
+		table.addCell(reservation.getFlight().getOperatingAirlines());
 
-        table.addCell("Flight Number");
-        table.addCell(reservation.getFlight().getFlightNumber());
+		table.addCell("Departure City");
+		table.addCell(reservation.getFlight().getDepartureCity());
 
-        table.addCell("Departure Date");
-        table.addCell(reservation.getFlight().getDepartureCity());
+		table.addCell("Arrival City");
+		table.addCell(reservation.getFlight().getArrivalCity());
 
-        table.addCell("Departure Time");
-        table.addCell(reservation.getFlight().getEstimatedDepartureTime().toString());
+		table.addCell("Flight Number");
+		table.addCell(reservation.getFlight().getFlightNumber());
 
-        cell = new PdfPCell(new Phrase("Passenger Details"));
-        cell.setColspan(2);
-        table.addCell(cell);
+		table.addCell("Departure Date");
+		table.addCell(reservation.getFlight().getDepartureCity());
 
-        table.addCell("First Name");
-        table.addCell(reservation.getPassenger().getFirstName());
+		table.addCell("Departure Time");
+		table.addCell(reservation.getFlight().getEstimatedDepartureTime().toString());
 
-        table.addCell("Last Name");
-        table.addCell(reservation.getPassenger().getLastName());
+		cell = new PdfPCell(new Phrase("Passenger Details"));
+		cell.setColspan(2);
+		table.addCell(cell);
 
-        table.addCell("Email");
-        table.addCell(reservation.getPassenger().getEmail());
+		table.addCell("First Name");
+		table.addCell(reservation.getPassenger().getFirstName());
 
-        table.addCell("Phone");
-        table.addCell(reservation.getPassenger().getPhone());
+		table.addCell("Last Name");
+		table.addCell(reservation.getPassenger().getLastName());
 
-        return table;
-    }
+		table.addCell("Email");
+		table.addCell(reservation.getPassenger().getEmail());
+
+		table.addCell("Phone");
+		table.addCell(reservation.getPassenger().getPhone());
+
+		return table;
+	}
+
 }
