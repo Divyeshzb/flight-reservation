@@ -6,73 +6,73 @@ import java.sql.Timestamp;
 import java.util.Date;
 
 @Entity
-public class Flight extends AbstractEntity{
+public class Flight extends AbstractEntity {
 
-    private String flightNumber;
-    private String operatingAirlines;
-    private String departureCity;
-    private String arrivalCity;
-    private Date dateOfDeparture;
-    private Timestamp estimatedDepartureTime;
+	private String flightNumber;
 
+	private String operatingAirlines;
 
-    public String getFlightNumber() {
-        return flightNumber;
-    }
+	private String departureCity;
 
-    public void setFlightNumber(String flightNumber) {
-        this.flightNumber = flightNumber;
-    }
+	private String arrivalCity;
 
-    public String getOperatingAirlines() {
-        return operatingAirlines;
-    }
+	private Date dateOfDeparture;
 
-    public void setOperatingAirlines(String operatingAirlines) {
-        this.operatingAirlines = operatingAirlines;
-    }
+	private Timestamp estimatedDepartureTime;
 
-    public String getDepartureCity() {
-        return departureCity;
-    }
+	public String getFlightNumber() {
+		return flightNumber;
+	}
 
-    public void setDepartureCity(String departureCity) {
-        this.departureCity = departureCity;
-    }
+	public void setFlightNumber(String flightNumber) {
+		this.flightNumber = flightNumber;
+	}
 
-    public String getArrivalCity() {
-        return arrivalCity;
-    }
+	public String getOperatingAirlines() {
+		return operatingAirlines;
+	}
 
-    public void setArrivalCity(String arrivalCity) {
-        this.arrivalCity = arrivalCity;
-    }
+	public void setOperatingAirlines(String operatingAirlines) {
+		this.operatingAirlines = operatingAirlines;
+	}
 
-    public Date getDateOfDeparture() {
-        return dateOfDeparture;
-    }
+	public String getDepartureCity() {
+		return departureCity;
+	}
 
-    public void setDateOfDeparture(Date dateOfDeparture) {
-        this.dateOfDeparture = dateOfDeparture;
-    }
+	public void setDepartureCity(String departureCity) {
+		this.departureCity = departureCity;
+	}
 
-    public Timestamp getEstimatedDepartureTime() {
-        return estimatedDepartureTime;
-    }
+	public String getArrivalCity() {
+		return arrivalCity;
+	}
 
-    public void setEstimatedDepartureTime(Timestamp estimatedDepartureTime) {
-        this.estimatedDepartureTime = estimatedDepartureTime;
-    }
+	public void setArrivalCity(String arrivalCity) {
+		this.arrivalCity = arrivalCity;
+	}
 
-    @Override
-    public String toString() {
-        return "Flight{" +
-                "flightNumber='" + flightNumber + '\'' +
-                ", operatingAirlines='" + operatingAirlines + '\'' +
-                ", departureCity='" + departureCity + '\'' +
-                ", arrivalCity='" + arrivalCity + '\'' +
-                ", dateOfDeparture=" + dateOfDeparture +
-                ", estimatedDepartureTime=" + estimatedDepartureTime +
-                '}';
-    }
+	public Date getDateOfDeparture() {
+		return dateOfDeparture;
+	}
+
+	public void setDateOfDeparture(Date dateOfDeparture) {
+		this.dateOfDeparture = dateOfDeparture;
+	}
+
+	public Timestamp getEstimatedDepartureTime() {
+		return estimatedDepartureTime;
+	}
+
+	public void setEstimatedDepartureTime(Timestamp estimatedDepartureTime) {
+		this.estimatedDepartureTime = estimatedDepartureTime;
+	}
+
+	@Override
+	public String toString() {
+		return "Flight{" + "flightNumber='" + flightNumber + '\'' + ", operatingAirlines='" + operatingAirlines + '\''
+				+ ", departureCity='" + departureCity + '\'' + ", arrivalCity='" + arrivalCity + '\''
+				+ ", dateOfDeparture=" + dateOfDeparture + ", estimatedDepartureTime=" + estimatedDepartureTime + '}';
+	}
+
 }
