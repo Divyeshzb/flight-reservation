@@ -11,28 +11,28 @@ import org.springframework.stereotype.Service;
 @Service
 public class SecurityServiceImpl implements SecurityService {
 
-    @Autowired
-    UserDetailsService userDetailsService;
+	@Autowired
+	UserDetailsService userDetailsService;
 
-    @Autowired
-    AuthenticationManager authenticationManager;
+	@Autowired
+	AuthenticationManager authenticationManager;
 
-    @Override
-    public boolean login(String username, String password) {
-        UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+	@Override
+	public boolean login(String username, String password) {
+		UserDetails userDetails = userDetailsService.loadUserByUsername(username);
 
-        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(userDetails, password,
-                userDetails.getAuthorities());
+		UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(userDetails, password,
+				userDetails.getAuthorities());
 
-        authenticationManager.authenticate(token);
+		authenticationManager.authenticate(token);
 
-        boolean result = token.isAuthenticated();
+		boolean result = token.isAuthenticated();
 
-        if (result) {
-            SecurityContextHolder.getContext().setAuthentication(token);
-        }
+		if (result) {
+			SecurityContextHolder.getContext().setAuthentication(token);
+		}
 
-        return result;
-    }
+		return result;
+	}
 
 }
